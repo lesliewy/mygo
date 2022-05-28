@@ -24,10 +24,26 @@ func testMap1() {
 	// remove item
 	delete(ages2, "alice")
 
-	// 遍历
-	for k, v := range ages2 {
-		fmt.Printf("%s: %d\n", k, v)
+	// 遍历一：不关心 key 和 value 的情况
+	for range ages2 {
 	}
+
+	// 遍历二：只关心 key 的情况
+	fmt.Println("keys:")
+	for key := range ages2 {
+		fmt.Println(key)
+	}
+
+	// 遍历二：关心 key 和 value 的情况
+	fmt.Println("key and values:")
+	for key, value := range ages2 {
+		fmt.Println(key, value)
+	}
+
+	// 遍历
+	//for k, v := range ages2 {
+	//	fmt.Printf("%s: %d\n", k, v)
+	//}
 	// map 元素不能获取地址. rehash
 	//a := &ages2["a"]
 }

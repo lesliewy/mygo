@@ -42,6 +42,7 @@ func testSlice2() {
 	summer := months[6:9]
 	fmt.Println("summer: ", summer)
 	a := summer[2:20]
+	fmt.Println("a: ", a)
 	//fmt.Println(a)
 	// 超过lens: 扩展
 	b := summer[1:6]
