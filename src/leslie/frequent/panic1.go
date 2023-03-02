@@ -6,14 +6,16 @@ import (
 )
 
 func main() {
-	//test1()
-	test2()
+	//testPanic1()
+	testPanic2()
 }
 
-/**
-  内置的宕机函数: panic
+/*
+*
+
+	内置的宕机函数: panic
 */
-func test1() {
+func testPanic1() {
 	log.Println("=====test1=====")
 	panicInTest1()
 }
@@ -22,11 +24,13 @@ func panicInTest1() {
 	panic("error...")
 }
 
-/**
-  defer 倒序输出, panic 输出堆栈信息.
+/*
+*
+
+	defer 倒序输出, panic 输出堆栈信息.
 */
-func test2() {
-	log.Println("=====test2=====")
+func testPanic2() {
+	log.Println("=====testPanic2=====")
 	f(3)
 }
 func f(x int) {

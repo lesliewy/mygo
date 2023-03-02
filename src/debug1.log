@@ -1,3 +1,3 @@
-[Debug]/Users/leslie/MyProjects/GitHub/go/mygo/src/leslie/frequent/log/log1.go:34: A message here.
-[Info]/Users/leslie/MyProjects/GitHub/go/mygo/src/leslie/frequent/log/log1.go:37: A message here.
-[Info]2022/02/24 18:04:42 /Users/leslie/MyProjects/GitHub/go/mygo/src/leslie/frequent/log/log1.go:40: A differenct prefix.
+[Debug]/home/leslie/myprojects/GitHub/mygo/src/leslie/frequent/log/log1.go:34: A message here.
+[Info]/home/leslie/myprojects/GitHub/mygo/src/leslie/frequent/log/log1.go:37: A message here.
+[Info]2023/03/01 18:08:13 /home/leslie/myprojects/GitHub/mygo/src/leslie/frequent/log/log1.go:40: A differenct prefix.

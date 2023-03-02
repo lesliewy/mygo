@@ -7,16 +7,17 @@ import (
 )
 
 func main() {
-	test1()
-	test2()
-	test3()
+	testDefer1()
+	testDefer2()
+	testDefer3()
 	testMultiDefer1()
 }
 
-/**
+/*
+*
 函数执行完毕后, 宕机后都可以执行.
 */
-func test1() string {
+func testDefer1() string {
 	fmt.Println("=====test1=====")
 	defer defer1("a")
 	fmt.Println("this is test1....")
@@ -27,11 +28,13 @@ func defer1(msg string) {
 	fmt.Println("defer1: ", msg)
 }
 
-/**
-  函数调用前添加defer关键字. 则该函数调用会被defer执行.
+/*
+*
+
+	函数调用前添加defer关键字. 则该函数调用会被defer执行.
 */
-func test2() {
-	fmt.Println("=====test2=====")
+func testDefer2() {
+	fmt.Println("=====testPanic2=====")
 	defer trace("bigSlowOperation")() // 最后要有(), 否则只会在进入时执行trace(), 退出后不回执行trace return 的func
 	time.Sleep(2 * time.Second)
 }
@@ -43,12 +46,14 @@ func trace(msg string) func() {
 	}
 }
 
-/**
-  defer 能修改函数返回结果.
-  defer 能获取到定义的func result 和 实参.
-  defer 不能带有return
+/*
+*
+
+	defer 能修改函数返回结果.
+	defer 能获取到定义的func result 和 实参.
+	defer 不能带有return
 */
-func test3() {
+func testDefer3() {
 	log.Println("=====test3=====")
 	log.Printf("triple(3): %d", triple(3))
 }
@@ -61,7 +66,7 @@ func triple(x int) (result int) {
 }
 
 /*
-  多个defer，按照定义顺序倒序执行.
+多个defer，按照定义顺序倒序执行.
 */
 func testMultiDefer1() {
 	log.Println("=====testMultiDefer1=====")
